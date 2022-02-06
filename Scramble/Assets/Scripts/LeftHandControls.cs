@@ -23,9 +23,8 @@ public class LeftHandControls : MonoBehaviour
 
     private void HandPositionPerformed(InputAction.CallbackContext context)
     {
-        Debug.Log(context.performed);
         if(context.performed) {
-            _moveHere += context.ReadValue<Vector3>();
+            _moveHere = context.ReadValue<Vector3>();
         }
     }
 
@@ -48,7 +47,9 @@ public class LeftHandControls : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        _rigidBody.AddForce(_moveHere);
-        _moveHere = Vector3.zero;
+        if(_moveHere == Vector3.zero)
+            _rigidBody.velocity = Vector3.zero;
+        else
+            _rigidBody.AddForce(_moveHere);
     }
 }
