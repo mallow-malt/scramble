@@ -11,10 +11,10 @@ public class RightHand : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         PlayerControls controls = new PlayerControls();
         controls.RightHand.Enable();
-        controls.RightHand.RightHandPosition.performed += RightHandPosition;
+        controls.RightHand.RightHandPosition.performed += RightHandPositionPerformed;
     }
 
-    private void RightHandPosition(InputAction.CallbackContext context)
+    private void RightHandPositionPerformed(InputAction.CallbackContext context)
     {
         if(context.performed) {
             moveHere += context.ReadValue<Vector3>();

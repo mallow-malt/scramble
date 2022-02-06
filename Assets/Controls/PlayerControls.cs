@@ -35,6 +35,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Grab"",
+                    ""type"": ""Button"",
+                    ""id"": ""11f221d9-4a5d-4268-8d97-0939d3ceb672"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -81,6 +90,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""RightHandPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3de197a3-1439-4b92-884c-a49a53226a38"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -107,6 +127,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         // RightHand
         m_RightHand = asset.FindActionMap("RightHand", throwIfNotFound: true);
         m_RightHand_RightHandPosition = m_RightHand.FindAction("RightHandPosition", throwIfNotFound: true);
+        m_RightHand_Grab = m_RightHand.FindAction("Grab", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -167,11 +188,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_RightHand;
     private IRightHandActions m_RightHandActionsCallbackInterface;
     private readonly InputAction m_RightHand_RightHandPosition;
+    private readonly InputAction m_RightHand_Grab;
     public struct RightHandActions
     {
         private @PlayerControls m_Wrapper;
         public RightHandActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @RightHandPosition => m_Wrapper.m_RightHand_RightHandPosition;
+        public InputAction @Grab => m_Wrapper.m_RightHand_Grab;
         public InputActionMap Get() { return m_Wrapper.m_RightHand; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -184,6 +207,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @RightHandPosition.started -= m_Wrapper.m_RightHandActionsCallbackInterface.OnRightHandPosition;
                 @RightHandPosition.performed -= m_Wrapper.m_RightHandActionsCallbackInterface.OnRightHandPosition;
                 @RightHandPosition.canceled -= m_Wrapper.m_RightHandActionsCallbackInterface.OnRightHandPosition;
+                @Grab.started -= m_Wrapper.m_RightHandActionsCallbackInterface.OnGrab;
+                @Grab.performed -= m_Wrapper.m_RightHandActionsCallbackInterface.OnGrab;
+                @Grab.canceled -= m_Wrapper.m_RightHandActionsCallbackInterface.OnGrab;
             }
             m_Wrapper.m_RightHandActionsCallbackInterface = instance;
             if (instance != null)
@@ -191,6 +217,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @RightHandPosition.started += instance.OnRightHandPosition;
                 @RightHandPosition.performed += instance.OnRightHandPosition;
                 @RightHandPosition.canceled += instance.OnRightHandPosition;
+                @Grab.started += instance.OnGrab;
+                @Grab.performed += instance.OnGrab;
+                @Grab.canceled += instance.OnGrab;
             }
         }
     }
@@ -207,5 +236,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     public interface IRightHandActions
     {
         void OnRightHandPosition(InputAction.CallbackContext context);
+        void OnGrab(InputAction.CallbackContext context);
     }
 }
