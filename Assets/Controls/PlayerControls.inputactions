@@ -1,0 +1,84 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "RightHand",
+            "id": "c73137e7-26b9-44f8-85a5-9fe63480c10d",
+            "actions": [
+                {
+                    "name": "RightHandPosition",
+                    "type": "Value",
+                    "id": "38ccd479-5328-4049-b2ff-8407d6251d64",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Mouse Vector 3",
+                    "id": "b9ca3100-8c49-4fcc-89fc-5c6b2e587e3f",
+                    "path": "MouseVector3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandPosition",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "x",
+                    "id": "43d27768-f22b-4c27-8ee5-8f7c2471e3f9",
+                    "path": "<Mouse>/delta/x",
+                    "interactions": "",
+                    "processors": "Invert,Scale(factor=2)",
+                    "groups": "KeyboardAndMouse",
+                    "action": "RightHandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "y",
+                    "id": "a4c4b291-8073-4a02-a671-7a9572881381",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "Scale(factor=0.4)",
+                    "groups": "KeyboardAndMouse",
+                    "action": "RightHandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "z",
+                    "id": "d79be8d3-99c4-43cc-ac1b-ab589a539495",
+                    "path": "<Mouse>/delta/y",
+                    "interactions": "",
+                    "processors": "Invert,Scale(factor=2)",
+                    "groups": "KeyboardAndMouse",
+                    "action": "RightHandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "KeyboardAndMouse",
+            "bindingGroup": "KeyboardAndMouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
