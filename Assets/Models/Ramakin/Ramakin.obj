@@ -4,8 +4,8 @@
 o 
 
 # material
-mtllib ramakin.mtl
-usemtl ramakinPalette
+mtllib Ramakin.mtl
+usemtl RamakinPalette
 
 # normals
 vn -1 0 0
