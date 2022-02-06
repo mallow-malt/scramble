@@ -11,6 +11,10 @@ public class RightHandControls : MonoBehaviour
 
     [SerializeField] private bool _closed = false;
 
+    [SerializeField] private HandleInPalm _handleInPalm = null;
+
+    [SerializeField] private Rigidbody _fryingPan = null;
+
     private void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
@@ -28,16 +32,46 @@ public class RightHandControls : MonoBehaviour
         }
     }
 
+    private bool _isHoldingPan = false;
+
+    private void HoldPan()
+    {
+        if (_isHoldingPan) return;
+
+        var fj = gameObject.AddComponent<FixedJoint>();
+        fj.connectedBody = _fryingPan;
+        _isHoldingPan = true;
+    }
+
+    private void ReleasePan()
+    {
+        if (!_isHoldingPan) return;
+
+        var fj = gameObject.GetComponent<FixedJoint>();
+        Destroy(fj);
+        _isHoldingPan = false;
+    }
+
     private void GrabStarted(InputAction.CallbackContext context)
     {
-        if(context.started)
+        if(context.started){
             _closed = true;
+            if (_handleInPalm.Colliding && !_isHoldingPan)
+            {
+                HoldPan();
+            }
+        }
     }
 
     private void GrabCanceled(InputAction.CallbackContext context)
     {
-        if(context.canceled)
+        if(context.canceled) {
             _closed = false;
+            if (_isHoldingPan)
+            {
+                ReleasePan();
+            }
+        }
     }
 
     private void Update()
