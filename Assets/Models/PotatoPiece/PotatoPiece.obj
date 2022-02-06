@@ -4,8 +4,8 @@
 o 
 
 # material
-mtllib potato_piece.mtl
-usemtl palette
+mtllib PotatoPiece.mtl
+usemtl PotatoPiecePalette
 
 # normals
 vn -1 0 0

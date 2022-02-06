@@ -5,7 +5,7 @@ o
 
 # material
 mtllib bird.mtl
-usemtl palette
+usemtl birdPalette
 
 # normals
 vn -1 0 0

@@ -5,7 +5,7 @@ o
 
 # material
 mtllib FryingPan.mtl
-usemtl palette
+usemtl FryingPanPalette
 
 # normals
 vn -1 0 0

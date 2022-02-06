@@ -4,8 +4,8 @@
 o 
 
 # material
-mtllib red_bell_pepper_piece.mtl
-usemtl palette
+mtllib RedBellpepperPiece.mtl
+usemtl RedBellpepperPiecePalette
 
 # normals
 vn -1 0 0

@@ -4,8 +4,8 @@
 o 
 
 # material
-mtllib lhand.mtl
-usemtl palette
+mtllib LeftHand01.mtl
+usemtl LeftHand01Palette
 
 # normals
 vn -1 0 0

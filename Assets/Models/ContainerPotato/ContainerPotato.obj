@@ -4,8 +4,8 @@
 o 
 
 # material
-mtllib container_potato.mtl
-usemtl palette
+mtllib ContainerPotato.mtl
+usemtl ContainerPotatoPalette
 
 # normals
 vn -1 0 0

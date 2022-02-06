@@ -4,8 +4,8 @@
 o 
 
 # material
-mtllib egg_broken_2.mtl
-usemtl palette
+mtllib EggBrokenBottom.mtl
+usemtl EggBrokenBottomPalette
 
 # normals
 vn -1 0 0

@@ -5,7 +5,7 @@ o
 
 # material
 mtllib ramakin.mtl
-usemtl palette
+usemtl ramakinPalette
 
 # normals
 vn -1 0 0
