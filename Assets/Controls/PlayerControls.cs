@@ -28,7 +28,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""c73137e7-26b9-44f8-85a5-9fe63480c10d"",
             ""actions"": [
                 {
-                    ""name"": ""RightHandPosition"",
+                    ""name"": ""HandPosition"",
                     ""type"": ""Value"",
                     ""id"": ""38ccd479-5328-4049-b2ff-8407d6251d64"",
                     ""expectedControlType"": ""Vector3"",
@@ -54,7 +54,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""RightHandPosition"",
+                    ""action"": ""HandPosition"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -65,7 +65,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": ""Invert,Scale(factor=2)"",
                     ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""RightHandPosition"",
+                    ""action"": ""HandPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -76,7 +76,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": ""Scale(factor=0.4)"",
                     ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""RightHandPosition"",
+                    ""action"": ""HandPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -87,7 +87,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": ""Invert,Scale(factor=2)"",
                     ""groups"": ""KeyboardAndMouse"",
-                    ""action"": ""RightHandPosition"",
+                    ""action"": ""HandPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -101,6 +101,120 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Grab"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""LeftHand"",
+            ""id"": ""8e43aa59-5342-4ece-a235-5267d5284e80"",
+            ""actions"": [
+                {
+                    ""name"": ""HandPosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""1f1e913b-00e8-4eac-894a-b9bc620f4bb2"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Grab"",
+                    ""type"": ""Button"",
+                    ""id"": ""1aa6bb80-e77e-49ba-8b2d-a939a603fe37"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""808102db-cbfd-4720-b7d3-59afd8f025a1"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""3D Vector"",
+                    ""id"": ""26154559-86f0-4bf3-a229-2b96ec041b61"",
+                    ""path"": ""3DVector"",
+                    ""interactions"": """",
+                    ""processors"": ""InvertVector3,ScaleVector3(x=10,y=10,z=10)"",
+                    ""groups"": """",
+                    ""action"": ""HandPosition"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""31ddeb08-16a7-4785-bfb1-677e7944ff47"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""HandPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b9cda330-1541-43ba-989c-5832f39c43cf"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""HandPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""de800c44-486e-4d66-8e40-495914f4f382"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""HandPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""549f3c42-e865-4a8c-936b-34b1281975e7"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""HandPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""forward"",
+                    ""id"": ""2c1d012f-c8a0-43b8-9942-c860058e3e6f"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""HandPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""backward"",
+                    ""id"": ""adec86e9-5c0a-4e70-9e11-c47e86116e2a"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""HandPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -126,8 +240,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
 }");
         // RightHand
         m_RightHand = asset.FindActionMap("RightHand", throwIfNotFound: true);
-        m_RightHand_RightHandPosition = m_RightHand.FindAction("RightHandPosition", throwIfNotFound: true);
+        m_RightHand_HandPosition = m_RightHand.FindAction("HandPosition", throwIfNotFound: true);
         m_RightHand_Grab = m_RightHand.FindAction("Grab", throwIfNotFound: true);
+        // LeftHand
+        m_LeftHand = asset.FindActionMap("LeftHand", throwIfNotFound: true);
+        m_LeftHand_HandPosition = m_LeftHand.FindAction("HandPosition", throwIfNotFound: true);
+        m_LeftHand_Grab = m_LeftHand.FindAction("Grab", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -187,13 +305,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // RightHand
     private readonly InputActionMap m_RightHand;
     private IRightHandActions m_RightHandActionsCallbackInterface;
-    private readonly InputAction m_RightHand_RightHandPosition;
+    private readonly InputAction m_RightHand_HandPosition;
     private readonly InputAction m_RightHand_Grab;
     public struct RightHandActions
     {
         private @PlayerControls m_Wrapper;
         public RightHandActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @RightHandPosition => m_Wrapper.m_RightHand_RightHandPosition;
+        public InputAction @HandPosition => m_Wrapper.m_RightHand_HandPosition;
         public InputAction @Grab => m_Wrapper.m_RightHand_Grab;
         public InputActionMap Get() { return m_Wrapper.m_RightHand; }
         public void Enable() { Get().Enable(); }
@@ -204,9 +322,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_RightHandActionsCallbackInterface != null)
             {
-                @RightHandPosition.started -= m_Wrapper.m_RightHandActionsCallbackInterface.OnRightHandPosition;
-                @RightHandPosition.performed -= m_Wrapper.m_RightHandActionsCallbackInterface.OnRightHandPosition;
-                @RightHandPosition.canceled -= m_Wrapper.m_RightHandActionsCallbackInterface.OnRightHandPosition;
+                @HandPosition.started -= m_Wrapper.m_RightHandActionsCallbackInterface.OnHandPosition;
+                @HandPosition.performed -= m_Wrapper.m_RightHandActionsCallbackInterface.OnHandPosition;
+                @HandPosition.canceled -= m_Wrapper.m_RightHandActionsCallbackInterface.OnHandPosition;
                 @Grab.started -= m_Wrapper.m_RightHandActionsCallbackInterface.OnGrab;
                 @Grab.performed -= m_Wrapper.m_RightHandActionsCallbackInterface.OnGrab;
                 @Grab.canceled -= m_Wrapper.m_RightHandActionsCallbackInterface.OnGrab;
@@ -214,9 +332,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             m_Wrapper.m_RightHandActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @RightHandPosition.started += instance.OnRightHandPosition;
-                @RightHandPosition.performed += instance.OnRightHandPosition;
-                @RightHandPosition.canceled += instance.OnRightHandPosition;
+                @HandPosition.started += instance.OnHandPosition;
+                @HandPosition.performed += instance.OnHandPosition;
+                @HandPosition.canceled += instance.OnHandPosition;
                 @Grab.started += instance.OnGrab;
                 @Grab.performed += instance.OnGrab;
                 @Grab.canceled += instance.OnGrab;
@@ -224,6 +342,47 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public RightHandActions @RightHand => new RightHandActions(this);
+
+    // LeftHand
+    private readonly InputActionMap m_LeftHand;
+    private ILeftHandActions m_LeftHandActionsCallbackInterface;
+    private readonly InputAction m_LeftHand_HandPosition;
+    private readonly InputAction m_LeftHand_Grab;
+    public struct LeftHandActions
+    {
+        private @PlayerControls m_Wrapper;
+        public LeftHandActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @HandPosition => m_Wrapper.m_LeftHand_HandPosition;
+        public InputAction @Grab => m_Wrapper.m_LeftHand_Grab;
+        public InputActionMap Get() { return m_Wrapper.m_LeftHand; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(LeftHandActions set) { return set.Get(); }
+        public void SetCallbacks(ILeftHandActions instance)
+        {
+            if (m_Wrapper.m_LeftHandActionsCallbackInterface != null)
+            {
+                @HandPosition.started -= m_Wrapper.m_LeftHandActionsCallbackInterface.OnHandPosition;
+                @HandPosition.performed -= m_Wrapper.m_LeftHandActionsCallbackInterface.OnHandPosition;
+                @HandPosition.canceled -= m_Wrapper.m_LeftHandActionsCallbackInterface.OnHandPosition;
+                @Grab.started -= m_Wrapper.m_LeftHandActionsCallbackInterface.OnGrab;
+                @Grab.performed -= m_Wrapper.m_LeftHandActionsCallbackInterface.OnGrab;
+                @Grab.canceled -= m_Wrapper.m_LeftHandActionsCallbackInterface.OnGrab;
+            }
+            m_Wrapper.m_LeftHandActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @HandPosition.started += instance.OnHandPosition;
+                @HandPosition.performed += instance.OnHandPosition;
+                @HandPosition.canceled += instance.OnHandPosition;
+                @Grab.started += instance.OnGrab;
+                @Grab.performed += instance.OnGrab;
+                @Grab.canceled += instance.OnGrab;
+            }
+        }
+    }
+    public LeftHandActions @LeftHand => new LeftHandActions(this);
     private int m_KeyboardAndMouseSchemeIndex = -1;
     public InputControlScheme KeyboardAndMouseScheme
     {
@@ -235,7 +394,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public interface IRightHandActions
     {
-        void OnRightHandPosition(InputAction.CallbackContext context);
+        void OnHandPosition(InputAction.CallbackContext context);
+        void OnGrab(InputAction.CallbackContext context);
+    }
+    public interface ILeftHandActions
+    {
+        void OnHandPosition(InputAction.CallbackContext context);
         void OnGrab(InputAction.CallbackContext context);
     }
 }

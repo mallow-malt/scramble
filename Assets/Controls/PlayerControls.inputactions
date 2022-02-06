@@ -6,7 +6,7 @@
             "id": "c73137e7-26b9-44f8-85a5-9fe63480c10d",
             "actions": [
                 {
-                    "name": "RightHandPosition",
+                    "name": "HandPosition",
                     "type": "Value",
                     "id": "38ccd479-5328-4049-b2ff-8407d6251d64",
                     "expectedControlType": "Vector3",
@@ -32,7 +32,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "RightHandPosition",
+                    "action": "HandPosition",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -43,7 +43,7 @@
                     "interactions": "",
                     "processors": "Invert,Scale(factor=2)",
                     "groups": "KeyboardAndMouse",
-                    "action": "RightHandPosition",
+                    "action": "HandPosition",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -54,7 +54,7 @@
                     "interactions": "",
                     "processors": "Scale(factor=0.4)",
                     "groups": "KeyboardAndMouse",
-                    "action": "RightHandPosition",
+                    "action": "HandPosition",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -65,7 +65,7 @@
                     "interactions": "",
                     "processors": "Invert,Scale(factor=2)",
                     "groups": "KeyboardAndMouse",
-                    "action": "RightHandPosition",
+                    "action": "HandPosition",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -79,6 +79,120 @@
                     "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "LeftHand",
+            "id": "8e43aa59-5342-4ece-a235-5267d5284e80",
+            "actions": [
+                {
+                    "name": "HandPosition",
+                    "type": "Value",
+                    "id": "1f1e913b-00e8-4eac-894a-b9bc620f4bb2",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Grab",
+                    "type": "Button",
+                    "id": "1aa6bb80-e77e-49ba-8b2d-a939a603fe37",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "808102db-cbfd-4720-b7d3-59afd8f025a1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "3D Vector",
+                    "id": "26154559-86f0-4bf3-a229-2b96ec041b61",
+                    "path": "3DVector",
+                    "interactions": "",
+                    "processors": "InvertVector3,ScaleVector3(x=10,y=10,z=10)",
+                    "groups": "",
+                    "action": "HandPosition",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "31ddeb08-16a7-4785-bfb1-677e7944ff47",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "HandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "b9cda330-1541-43ba-989c-5832f39c43cf",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "HandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "de800c44-486e-4d66-8e40-495914f4f382",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "HandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "549f3c42-e865-4a8c-936b-34b1281975e7",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "HandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "forward",
+                    "id": "2c1d012f-c8a0-43b8-9942-c860058e3e6f",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "HandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "backward",
+                    "id": "adec86e9-5c0a-4e70-9e11-c47e86116e2a",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardAndMouse",
+                    "action": "HandPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
