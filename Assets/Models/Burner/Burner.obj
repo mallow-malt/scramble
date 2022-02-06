@@ -4,8 +4,8 @@
 o 
 
 # material
-mtllib burner.mtl
-usemtl burnerPalette
+mtllib Burner.mtl
+usemtl BurnerPalette
 
 # normals
 vn -1 0 0
