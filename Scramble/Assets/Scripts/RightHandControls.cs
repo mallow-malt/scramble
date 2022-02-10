@@ -41,6 +41,7 @@ public class RightHandControls : MonoBehaviour
         var fj = gameObject.AddComponent<FixedJoint>();
         fj.connectedBody = _fryingPan;
         _isHoldingPan = true;
+        _fryingPan.useGravity = false;
     }
 
     private void ReleasePan()
@@ -50,6 +51,7 @@ public class RightHandControls : MonoBehaviour
         var fj = gameObject.GetComponent<FixedJoint>();
         Destroy(fj);
         _isHoldingPan = false;
+        _fryingPan.useGravity = true;
     }
 
     private void GrabStarted(InputAction.CallbackContext context)

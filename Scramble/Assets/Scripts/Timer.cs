@@ -1,32 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 public class Timer : MonoBehaviour
 {
-    public delegate void UpdateTimerString(string NewTime);
-    public static event UpdateTimerString UpdateTimer;
-    public float TimeRemaining = 120;
-    private bool TimerIsRunning = false;
+    public delegate void TimerEnding();
+    public static event TimerEnding TimerEnded;
+    public float SecondsRemaining = 120;
+    private bool _timerIsRunning = false;
+    private Text _timerText;
     private void Start()
     {
-        TimerIsRunning = true;
+        _timerText = gameObject.GetComponentInChildren<Text>();
+        _timerIsRunning = true;
     }
 
     private void Update()
     {
-        if (TimerIsRunning)
+        if (_timerIsRunning)
         {
-            if (TimeRemaining > 0)
-            {
-                TimeRemaining -= Time.deltaTime;
-            }
+            if (SecondsRemaining > 0)
+                SecondsRemaining -= Time.deltaTime;
             else
             {
-                Debug.Log("Time has run out!");
-                TimeRemaining = 0;
-                TimerIsRunning = false;
+                SecondsRemaining = 0;
+                _timerIsRunning = false;
+                TimerEnded();
             }
-            UpdateTimer(TimeToString(TimeRemaining));
+            if(_timerText.text != TimeToString(SecondsRemaining))
+                _timerText.text = TimeToString(SecondsRemaining);
         }
     }
 
