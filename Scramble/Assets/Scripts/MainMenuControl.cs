@@ -6,7 +6,9 @@ public class MainMenuControl : MonoBehaviour
 {
     [SerializeField] private GameObject _mainMenu = default;
     [SerializeField] private GameObject _howToPlay = default;
+#if UNITY_WEBGL
     [SerializeField] private GameObject _exitButton = default;
+#endif
 
     public void OnPlayClicked()
     {
