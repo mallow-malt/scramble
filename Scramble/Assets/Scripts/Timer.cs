@@ -1,34 +1,33 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
-    public delegate void TimerEnding();
-    public static event TimerEnding TimerEnded;
-    public float SecondsRemaining = 120;
+    public UnityEvent OnTimerEnded;
+    private float _secondsRemaining = 120;
     private bool _timerIsRunning = false;
     private Text _timerText;
     private void Start()
     {
         _timerText = gameObject.GetComponentInChildren<Text>();
-        _timerIsRunning = true;
     }
 
     private void Update()
     {
         if (_timerIsRunning)
         {
-            if (SecondsRemaining > 0)
-                SecondsRemaining -= Time.deltaTime;
+            if (_secondsRemaining > 0)
+                _secondsRemaining -= Time.deltaTime;
             else
             {
-                SecondsRemaining = 0;
+                _secondsRemaining = 0;
                 _timerIsRunning = false;
-                TimerEnded();
+                OnTimerEnded.Invoke();
             }
-            if(_timerText.text != TimeToString(SecondsRemaining))
-                _timerText.text = TimeToString(SecondsRemaining);
         }
+        if(_timerText.text != TimeToString(_secondsRemaining))
+            _timerText.text = TimeToString(_secondsRemaining);
     }
 
     private string TimeToString(float timeRemaining)
@@ -36,5 +35,21 @@ public class Timer : MonoBehaviour
         int minutes = Mathf.FloorToInt(timeRemaining / 60); 
         int seconds = Mathf.FloorToInt(timeRemaining % 60);
         return $"{minutes:00}:{seconds:00}";
+    }
+
+    public void StartTimer()
+    {
+        _timerIsRunning = true;
+    }
+
+    public void StopTimer()
+    {
+        _timerIsRunning = false;
+    }
+
+    public void InitTimer(float seconds)
+    {
+        _timerIsRunning = false;
+        _secondsRemaining = seconds;
     }
 }

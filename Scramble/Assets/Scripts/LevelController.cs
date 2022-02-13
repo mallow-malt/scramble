@@ -1,20 +1,22 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelController : MonoBehaviour
 {
     #region Refs
     [Tooltip("The level to play.")]
     public Level Level = default;
+    [SerializeField] private Timer _timer;
+    public UnityEvent<float> OnCookedChange;
+    public UnityEvent<float> OnScrambledChange;
     #endregion
 
 
     #region State
     /// <summary> Has the level been started? </summary>
     private bool _levelRunning = false;
-    /// <summary> The amount of time left in the current level. </summary>
-    private float _timeLeft;
     /// <summary> The amount cooked the eggs are, from 0 to 100. </summary>
     private float _cookedAmount;
     /// <summary> The ammount scrambled the eggs are, from 0 to 100. </summary>
@@ -61,64 +63,36 @@ public class LevelController : MonoBehaviour
     }
     #endregion
 
-
-    private void InitializeTimer()
-    {
-        throw new NotImplementedException();
-    }
-
     #region Messages
     void Start()
     {
-        _timeLeft = Level.Duration;
-        InitializeTimer();
+        _timer.OnTimerEnded.AddListener(OnTimerEnded);
+        _timer.InitTimer(Level.Duration);
+    }
+
+    private void OnTimerEnded()
+    {
+        throw new NotImplementedException();
     }
 
     void Update()
     {
         if (_levelRunning)
         {
-            var newTimeLeft = Mathf.Max(0, _timeLeft - Time.deltaTime);
-            if (newTimeLeft != _timeLeft)
-            {
-                _timeLeft = newTimeLeft;
-                UpdateTimer();
-            }
             var newCookedAmount = Mathf.Min(100, _heatLevel * Time.deltaTime * Level.CookedMeterFillRate);
             if (newCookedAmount != _cookedAmount)
             {
                 _cookedAmount = newCookedAmount;
-                UpdateCookedView();
+                OnCookedChange.Invoke(_cookedAmount);
             }
             var newScrambleAmount = Mathf.Min(100, _shakeAmount * Time.deltaTime * Level.ScrambleMeterFillRate);
             if (newScrambleAmount != _scrambleAmount)
             {
                 _scrambleAmount = newScrambleAmount;
-                UpdateScrambleView();
+                OnScrambledChange.Invoke(_scrambleAmount);
             }
         }
     }
 
-    #endregion
-
-
-    #region View updates
-    /// <summary> Emit event to update scramble meter to reflect <c>_scrambleAmount</c> </summary>
-    private void UpdateScrambleView()
-    {
-        throw new NotImplementedException();
-    }
-
-    /// <summary> Emit event to update cooked meter to reflect <c>_cookedAmount</c> </summary>
-    private void UpdateCookedView()
-    {
-        throw new NotImplementedException();
-    }
-
-    /// <summary> Emit event to update timer to reflect <c>_timeLeft</c> </summary>
-    private void UpdateTimer()
-    {
-        throw new NotImplementedException();
-    }
     #endregion
 }

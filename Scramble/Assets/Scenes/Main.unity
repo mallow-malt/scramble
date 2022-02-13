@@ -1390,7 +1390,6 @@ GameObject:
   - component: {fileID: 1149610148}
   - component: {fileID: 1149610147}
   - component: {fileID: 1149610146}
-  - component: {fileID: 1149610145}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -1398,18 +1397,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1149610145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149610144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69333a787e8d68d47a959d36a9682d9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1149610146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1570,6 +1557,81 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 05:00
+--- !u!1 &1231750550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1231750552}
+  - component: {fileID: 1231750551}
+  m_Layer: 0
+  m_Name: LevelController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!114 &1231750551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231750550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9891fd00b2f0ca0049d465bc4fb4f36a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: {fileID: 11400000, guid: e423ba66c3233e7fbaf5050b6ec7a4f0, type: 2}
+  _timer: {fileID: 1298581947}
+  OnCookedChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2124947537}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnScrambledChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 864972851}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &1231750552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231750550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1263860402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,7 +1852,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df8b2fe1504932b43ae37f97928d1067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondsRemaining: 120
+  OnTimerEnded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1302390072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,23 +2966,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4182eb9686b1a46bc0d733f6bef685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnCookedChange:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2124947537}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
-        m_MethodName: set_value
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _drawGizmo: 1
   _scale: 1
+  Mask:
+    serializedVersion: 2
+    m_Bits: 8
+  InFire: 0
 --- !u!65 &1989232697
 BoxCollider:
   m_ObjectHideFlags: 0
